@@ -42,3 +42,17 @@ A Brief Review of Linear Algebra
         #. More abstractly : 
             $$ ax + by = u$$ {#eq:0.1}
             $$ cx + dy = v$$ {#eq:0.2}
+        #. Eliminating $y$ by multiplying Eq. \ref{eq:0.1} by $d$ and Eq. \ref{eq:0.2} by
+           $b$ and subtracting Eq. \ref{eq:0.2} from Eq. \ref{eq:0.1} 
+            $$ dax - bcx = du - bv $$
+        #. Factoring 
+            $$ (da - bc)x = du - bv $$ {#eq:0.3} 
+        #. Solving for $x$ and separating the dot product 
+            $$ x = \frac{du - bv}{da - bc} = \frac{1}{ad - bc}(d, -b)\begin{pmatrix}
+                                                                    u \\
+                                                                    v \\ 
+                                                                    \end{pmatrix}$$ {#eq:0.4} 
+            
+
+
+
