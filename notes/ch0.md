@@ -40,19 +40,38 @@ A Brief Review of Linear Algebra
             * heads : $x + y = 7$
             * legs  : $2x + 4y = 22$
         #. More abstractly : 
-            $$ ax + by = u$$ {#eq:0.1}
-            $$ cx + dy = v$$ {#eq:0.2}
-        #. Eliminating $y$ by multiplying Eq. \ref{eq:0.1} by $d$ and Eq. \ref{eq:0.2} by
-           $b$ and subtracting Eq. \ref{eq:0.2} from Eq. \ref{eq:0.1} 
+            $$ ax + by = u$$            {#eq:0.1}
+            $$ cx + dy = v$$            {#eq:0.2}
+        #. Eliminating $y$ by multiplying (\ref{eq:0.1}) by $d$ and (\ref{eq:0.2}) by
+           $b$ and subtracting (\ref{eq:0.2}) from (\ref{eq:0.1})
             $$ dax - bcx = du - bv $$
         #. Factoring 
-            $$ (da - bc)x = du - bv $$ {#eq:0.3} 
+            $$ (da - bc)x = du - bv $$  {#eq:0.3} 
         #. Solving for $x$ and separating the dot product 
-            $$ x = \frac{du - bv}{da - bc} = \frac{1}{ad - bc}(d, -b)\begin{pmatrix}
-                                                                    u \\
-                                                                    v \\ 
-                                                                    \end{pmatrix}$$ {#eq:0.4} 
-            
+            $$ x = \frac{du - bv}{ad - bc} = \frac{1}{ad - bc}(d, -b)\begin{pmatrix} u \\ v \\ 
+               \end{pmatrix}$$          {#eq:0.4} 
+        #. Similarily, we can take the approach of eliminating $x$ by multiplying 
+           (\ref{eq:0.2}) by $a$ and (\ref{eq:0.1})  by $c$. Subtracting the two equations
+           yields 
+           $$ (cb - ad)y = cu -av$$     {#eq:0.5}
+           $$ x = \frac{cu - av}{ad - bc} = \frac{1}{ad - bc}(-c, a)\begin{pmatrix} u \\ v \\ 
+              \end{pmatrix}$$ {#eq:0.6} 
+    #) This is child's play
 
+#. Matrix Appears
+    a) Putting together (\ref{eq:0.4}) and (\ref{eq:0.6}), one gets our first matrix
+       $$\begin{pmatrix} x \\ y \\ \end{pmatrix} =
+         \frac{1}{ad - bc}\begin{pmatrix} du - bv \\ -cu + av \end{pmatrix} =
+         \frac{1}{ad - bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \begin{pmatrix} u \\ v \end{pmatrix}$$ {#eq:0.7}
+    #) Another example of multiplying a matrix on a column vector
+       $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} =
+        \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}$$ {#eq:0.8}
+    #) Rewritten (\ref{eq:0.8})
+       $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} =
+        \begin{pmatrix} u \\ v \end{pmatrix}$$ {#eq:0.9}
+    #) Let $M = \begin{pmatrix} a & b  \\ c & b  \end{pmatrix}$ and
+       $\vec{x} = \begin{pmatrix} x \\ y \end{pmatrix}$ and 
+       $\vec{u} = \begin{pmatrix} u \\ v \end{pmatrix}$ then
+        $$ M \vec{x} = \vec{u}$$ {#eq:0.10}
 
-
+#. Matrix Appears
