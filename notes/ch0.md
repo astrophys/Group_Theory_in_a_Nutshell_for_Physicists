@@ -74,4 +74,25 @@ A Brief Review of Linear Algebra
        $\vec{u} = \begin{pmatrix} u \\ v \end{pmatrix}$ then
         $$ M \vec{x} = \vec{u}$$ {#eq:0.10}
 
-#. Matrix Appears
+#. Turning the problem around
+    a) Think of $M$ transforming $\vec{x} \rightarrow \vec{u}$
+    #) What mappens when we introduce another matrix, $N$, to transform $\vec{u}$?
+    $$\vec{p} = N\vec{u} = N M \vec{x} = P \vec{x}$$ {#eq:0.11}
+    #) Dispose with $\vec{p}$, $\vec{x}$ and $\vec{u}$ altogether, just consider the relation
+       between $P = N M$.  
+        #. Multiplying matrices is a central theme of group theory
+        #. Introduce indices. 
+
+#. Appearance of indices and rectangular matrices
+    a) Write $M = \begin{pmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{pmatrix}$
+        #. Using $M_{ij}$ for the $i$'th row and the $j$'th column
+    #) Consider, $M_{31} = g$ and $M_{23} = f$ in the below matrix
+        $$M = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i\end{pmatrix}$$ {#eq:0.12}
+    #) Let $\vec{x} = \begin{pmatrix} x_{1} \\ x_{2} \end{pmatrix}$ and $\vec{u} = \begin{pmatrix} u_{1} \\ u_{2} \end{pmatrix}$ 
+        #. Can then rewrite (\ref{eq:0.10}) as 
+           $$u_{i} = M_{i1} x_{1} + M_{i2} x_{2} = \Sigma_{j=1}^{2} M_{ij} x_{j}$$
+           for $i = 1, 2$
+       
+#. Multiplying matrices together and the Kronecker Delta
+    a) Generalizing to a $n$-dimensional matrix
+
