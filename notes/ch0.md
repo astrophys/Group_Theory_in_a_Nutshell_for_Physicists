@@ -90,9 +90,74 @@ A Brief Review of Linear Algebra
         $$M = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i\end{pmatrix}$$ {#eq:0.12}
     #) Let $\vec{x} = \begin{pmatrix} x_{1} \\ x_{2} \end{pmatrix}$ and $\vec{u} = \begin{pmatrix} u_{1} \\ u_{2} \end{pmatrix}$ 
         #. Can then rewrite (\ref{eq:0.10}) as 
-           $$u_{i} = M_{i1} x_{1} + M_{i2} x_{2} = \Sigma_{j=1}^{2} M_{ij} x_{j}$$
+           $$u_{i} = M_{i1} x_{1} + M_{i2} x_{2} = \sum\limits_{j=1}^{2} M_{ij} x_{j}$$
            for $i = 1, 2$
        
 #. Multiplying matrices together and the Kronecker Delta
-    a) Generalizing to a $n$-dimensional matrix
+    a) Generalizing to a $n$-dimensional matrix from above in-line equation.
+        $$u_{i} = \sum\limits^{n}_{j=1} M_{ij}x_{j} $$ {#eq:0.13} 
+    #) In (\ref{eq:0.10}), $j$ index goes over $M$'s columns and $x$'s rows.
+    #) Multiplying matrices (like in (\ref{eq:0.11}), and using \ref{eq:0.13} yields
+        $$ p_{i} = \sum\limits_{j=1}^{n} N_{ij}u_{j} \sum\limits_{j=1}^{n}\sum\limits_{k=1}^{n} N_{ij} M_{jk} x_{k} = \sum\limits_{k=1}^{n} P_{ik}x_{k}$$ {#eq:0.14}
+    Where $P=NM$ from (\ref{eq:0.11}) is equal to 
+    $$ P_{ik} = \sum\limits_{j=1}^{n} N_{ij} M_{jk} $$ {#eq:0.15}
+    #) Define identity matrix, $I$ with $I_{ij} = \delta_{ij}$ where $\delta_{ij}$ is the Kronecker delta sybmol : 
+    $$ \delta_{ij} = \begin{cases}
+                     1, & \text{if $i=j$}\\
+                     0, & \text{if $i \neq j$} 
+                     \end{cases} $$ {#eq:0.16}
+    #) Follows from (\ref{eq:0.15})
+    $$ (IM)_{ik} = \Sigma^{n}_{j=1}\delta_{ij}M_{jk} = M_{ik}$$
+       Therefore $IM = MI = M$
+    #) Can think of Matrix in (\ref{eq:0.12}) like 
+    $$ M = \left(\vec{\psi_{(1)}}, ..., \vec{\psi_{(k)}}, ..., \vec{\psi_{(n)}}\right) $${#eq:0.17}
+    #) Similarly with $P$ as $n$ different column vectors $\vec{\phi}_{(k)}$, \ref{eq:0.15})
+       becomes
+    $$ P = \left(\vec{\phi_{(1)}}, ..., \vec{\phi_{(n)}}\right) = NM = \left(N\vec{\psi_{(1)}}, ..., N\vec{\psi_{(n)}}\right) $$ {#eq:0.18}
+
+#. Einstein's repeated index summation
+    a) Repeated indices (see \ref{eq:0.15}), instructs to sum over index. In (\ref{eq:0.15})
+       $j$ appears twice, called 'dummy indice'. 
+    #) $i$ and $k$ appear once and are 'free indices'. They show up as the subscipts in
+       $P_{ik}$.
+    #) If we understand that repeated indices are summed over, the summation symbol is
+       redundant
+
+#. Not Commutative, but associative
+    a) Not Commutative : generally $NM \neq MN$
+    #) Is associative : $(AB)C = A(BC)$
+    $$ NM \neq MN \quad \text{but} \quad (AB)C = A(BC)$$ {#eq:0.19}
+
+#. Transpose
+    a) $(M^{T})_{ij} = M_{ji}$
+    #) Important theorem:
+    $$ (NM)^{T} = M^{T}N^{T} $$ {#eq:0.20}
+    #) Proof of (\ref{eq:0.20}) : 
+    \begin{align}
+       \nonumber ((N M)^{T})_{ij} = (NM)_{ji} = (N_{jk} M_{ki}) = (N_{kj}^{T} M_{ik}^{T}) = \\
+       \nonumber \text{arbitrarily switch N and M so indices contract(?)} \\
+       \nonumber = (M_{ik}^{T} N_{kj}^{T}) = (M^{T} N^{T})_{ij} 
+       \end{align}
+
+#. Trace
+    a) Trace is sum of diagonal elements of matrix
+    $$ \text{tr} M = \Sigma_{i} M_{ii} = M_{ii} $$          {#eq:0.21}
+    #) Important fact, despite $AB \neq BA$, 
+    $$ AB \neq BA \quad \text{but} \quad \text{tr} AB = \text{tr} BA$$  {#eq:0.22}
+    #) This leads to cyclic property of the trace
+    $$ \text{tr} ABC = \text{tr} (AB)C = \text{tr} C(AB) = \text{tr} CAB $$  {#eq:0.23}
+
+#. The inverse
+    a) For an ordinary number $m$, it's inverse is $1/m$ such that $m m^{-1} = 1$. 
+        #. true if $m \neq 0$
+    #) Similar condition must exist for matrices, e.g. $M M^{-1} = I$
+    #) If $M$ in (\ref{eq:0.10}) has an inverse, then it is straight forward to solve
+    $$ \vec{x} = I\vec{x} = M^{-1}M\vec{x} = M^{-1}\vec{u}$$  {#eq:0.24}
+     
+
+
+
+
+
+
 
