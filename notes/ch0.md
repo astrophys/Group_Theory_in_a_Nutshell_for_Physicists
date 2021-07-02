@@ -153,7 +153,37 @@ A Brief Review of Linear Algebra
     #) Similar condition must exist for matrices, e.g. $M M^{-1} = I$
     #) If $M$ in (\ref{eq:0.10}) has an inverse, then it is straight forward to solve
     $$ \vec{x} = I\vec{x} = M^{-1}M\vec{x} = M^{-1}\vec{u}$$  {#eq:0.24}
-     
+    #) Comparing (\ref{eq:0.7}) to (\ref{eq:0.24})
+    $$ M^{-1} = \frac{1}{D} \begin{pmatrix} d  - b\\ -c + a \end{pmatrix}$$ {#eq:0.25}
+    where
+    $$ D = \frac{1}{ad - bc} $$ {#eq:0.26}
+    where $D$ is the determinant of $M$.
+    #) IMPORTANT : $M^{-1}$ exists ONLY if $det M = D \neq 0$
+    #) By theoretical physics standards, if we can show that a generic 2 x 2 matrix has
+       inverse and we can prove that a 3 x 3 has an inverse and show a pattern, then by 
+       our standards, we can prove that all matrices have an inverse.
+    #) Let 3x3 analogue be : 
+    $$ ax + by + cz = u $$ {#eq:0.27}
+    $$ dx + ey - fz = v $$ {#eq:0.28}
+    $$ gx + hy + iz = w $$ {#eq:0.29}
+    #) 3 equations, 3 unknowns. Is solvable. Eliminate $z$ with $i$(\ref{eq:0.27}) - $c$(\ref{eq:0.29}) :
+    $$ i(ax + by + cz = u) $$ 
+    $$ -c(gx + hy + iz = w) $$
+    yields
+    $$ iax + iby -cgx - chy = iu - cw$$
+    rearrange
+    $$ (ia-cg)x + (ib - ch)y = iu - cw$$ {#eq:0.30}
+    Also the combo of $i$(\ref{eq:0.28}) - $f$(\ref{eq:0.29}) : 
+    $$ i(dx + ey - fz = v) $$ 
+    $$ -f(gx + hy + iz = w) $$
+    yields 
+    $$ (id-fg)x + (ie -fh)y = iv - fw $$ {#eq:0.31}
+    #) By eliminating $z$, we've reduced equations (\ref{eq:0.27}), (\ref{eq:0.28}),
+       (\ref{eq:0.29}) to two equations : 
+    $$ a'x + b'y = u'$$ {#eq:0.32}
+    $$ c'x + d'y = v'$$ {#eq:0.33}
+    where $a' = (ia-cg), and so forth. Now we can apply the solutions give in (\ref{eq:0.4}),
+    (\ref{eq:0.6}) and (\ref{eq:0.7})
 
 
 
