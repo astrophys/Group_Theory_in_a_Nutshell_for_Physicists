@@ -182,8 +182,23 @@ A Brief Review of Linear Algebra
        (\ref{eq:0.29}) to two equations : 
     $$ a'x + b'y = u'$$ {#eq:0.32}
     $$ c'x + d'y = v'$$ {#eq:0.33}
-    where $a' = (ia-cg), and so forth. Now we can apply the solutions give in (\ref{eq:0.4}),
-    (\ref{eq:0.6}) and (\ref{eq:0.7})
+    where $a' = (ia-cg)$
+    e.g.
+    $$\overbrace{(ia-cg)}^{a'}x + \overbrace{(ib-ch)}^{b'}y = \overbrace{iu-cw}^{u'}$$ 
+    $$\underbrace{(id-fg)}_{c'}x + \underbrace{(ie-fh)}_{d'}y = \underbrace{iv-fw}_{v'}$$
+    from solving (\ref{eq:0.32}) and (\ref{eq:0.33}) by multiplying (\ref{eq:0.32}) by $d$ and
+    (\ref{eq:0.33}) by $-b$, e.g.
+    $$ d[a'x + b'y = u'] $$ 
+    $$-b[c'x + d'y = v'] $$
+    yields
+    $$(d'a' - c'b')x = d'u'-b'v'$$
+    rearranging and solving for $x$
+    $$x = \frac{d'u' - b'v'}{a'd'-b'c'} = \frac{(ei-fh)(iu-cw) - (bi-ch)(iv-fw)}{(ei-fh)(ai-cg)-(di-fg)(bi-ch)}$$ {#eq:0.34}
+
+
+    Now we can apply the solutions give in (\ref{eq:0.4}),
+    (\ref{eq:0.6}) and (\ref{eq:0.7}), which yields $x = \frac{d'u' - b'v'}{a'd'-b'c'}$.
+    Note if $i \rightarrow 0$, 
 
 
 
